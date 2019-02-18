@@ -61,7 +61,6 @@ Android内置数据库SQLite，SQLite是开源的SQL数据库。Android提供了
             android:id="@+id/delete_btn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            andrAndroid提供了SQLiteOpenHelper类来操作SQLite数据库，该类包含的方法有创建， 插入，删除，更新(CRUD)操作。oid:onClick="deleteUser"
             android:text="根据ID删除用户"/>
 
     <Button
