@@ -11,7 +11,6 @@ Android内置数据库SQLite，SQLite是开源的SQL数据库。Android提供了
 首先来看下布局代码，TextView显示数据库所有数据。  
 ``` xml
 <?xml version="1.0" encoding="utf-8"?>
-<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:tools="http://schemas.android.com/tools"
