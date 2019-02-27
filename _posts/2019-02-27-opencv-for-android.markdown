@@ -20,6 +20,7 @@ Package name: ```org.opencv```
 5. 复制资源文件， 复制```opencv_sdk_path/sdk/java/res```下所有文件到```your_project_path/opencv/src/main/res```目录下
 6. 在```your_project_opencv/src```目录下创建```sdk```目录，并把```opencv_sdk_path/sdk/native```所有文件复制到刚创建的目录下
 7. 在opencv module下创建CMakeLists.txt文件，并添加如下代码
+
 ```
 cmake_minimum_required(VERSION 3.4.1)
 
@@ -28,7 +29,9 @@ find_package(OpenCV REQUIRED)
 message(STATUS "OpenCV libraries: ${OpenCV_LIBS}")
 include_directories(${OpenCV_INCLUDE_DIRS})
 ```
+
 8. 修改```opencv module```的```build.gradle```文件，如下
+
 ```
 android {
     compileSdkVersion 28
@@ -69,48 +72,11 @@ android {
         }
     }
 
-}android {
-    compileSdkVersion 28
-
-    defaultConfig {
-        minSdkVersion 19
-        targetSdkVersion 28
-        versionCode 1
-        versionName "1.0"
-
-        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
-        externalNativeBuild {
-            cmake {
-                cppFlags "-frtti -fexceptions"
-                // 根据你电脑配置添加或删除这些类型
-                abiFilters 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a'
-            }
-        }
-    }
-
-    buildTypes {
-        release {
-            minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-        }
-    }
-
-    externalNativeBuild {
-        cmake {
-            path "CMakeLists.txt"
-        }
-    }
-    sourceSets {
-        main {
-            jni.srcDirs = [jni.srcDirs, 'src/sdk/native/jni/include']
-            jniLibs.srcDirs = [jniLibs.srcDirs, 'src/sdk/native/3rdparty/libs', 'src/sdk/native/libs']
-        }
-    }
-
 }
 ```
+
 9. 在```app module```同样创建```CMakeLists.txt```文件，添加如下代码
+
 ```
 cmake_minimum_required(VERSION 3.4.1)
 
@@ -130,7 +96,9 @@ message(STATUS "OpenCV libraries: ${OpenCV_LIBS}")
 target_link_libraries(native-lib
         ${OpenCV_LIBS})
 ```
+
 10. 修改```app module```的```build.gradle```文件，如下
+
 ```
 android {
     compileSdkVersion 28
@@ -165,10 +133,11 @@ android {
     }
 }
 ```
+
 11.  同步gradle。在C++文件中是否可以include```<opencv2/opencv.hpp>```
 ![inclue opencv](/images/include_opencv.png)
 13.  如果打包完成，在分析apk中可以查看到opencv的so文件
-![libopencv](/images/libopencv.png)
+![libopencv](/images/libopencv.png)  
 步骤完成。
 
 如有什么问题可以在github上提问我。
