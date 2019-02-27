@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Android NDK开发中引入OpenCV库"
-date:   2019-02-18 12:00:00 +0800
+date:   2019-02-27 12:00:00 +0800
 categories: Android
 tags: android, opencv
 ---
