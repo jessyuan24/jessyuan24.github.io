@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "使用Kotlin的Extension快速打开Activity页面"
-date:   2019-03-11 12:00:00 +0800
+date:   2019-03-12 12:00:00 +0800
 categories: android
 tags: android, kotlin
 ---
