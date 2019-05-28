@@ -5,8 +5,6 @@ date:   2019-05-28 12:00:00 +0800
 categories: android
 tags: android, kotlin
 ---
-# 技巧地使用Gradle
-
 ## Android编译过程
 
 Android Studio是用gradle编译Android项目的代码和资源。  
